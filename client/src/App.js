@@ -5,6 +5,7 @@ import './App.css';
 
 import Home from './pages/Home'
 import Login from './pages/Login';
+import SuperLottoPlus from './pages/SuperLottoPlus';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -25,6 +26,10 @@ function App() {
           <Route 
             path='/'
             element={<Home />}
+          />
+          <Route 
+            path='/super_lotto_plus'
+            element={<SuperLottoPlus />}
           />          
         </Routes>
        
