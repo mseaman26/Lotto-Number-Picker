@@ -1,1 +1,1 @@
-# Lotto-Number-Picker
+# MERN-Template
