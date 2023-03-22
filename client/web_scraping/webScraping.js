@@ -7,9 +7,14 @@ const superLottoPlusResults = 'https://www.lotteryusa.com/california/super-lotto
 axios.get(superLottoPlusResults)
   .then(response => {
     const $ = cheerio.load(response.data);
-    const cards = $('.c-result-card').text();
- 
-    console.log(cards);
+    $('.c-result-card').each((i, el) => {
+        let nums = ''
+        $(el).find('ul').children().each((i, num) => {
+            nums += $(num).text().concat(', ').trim()
+        })
+        console.log($(el).find('time').text(), nums)
+    })
+
   })
   .catch(error => {
     console.log(error);
